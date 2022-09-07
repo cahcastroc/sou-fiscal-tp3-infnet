@@ -52,35 +52,25 @@ class MainActivity : AppCompatActivity() {
 
         btCadastrar.setOnClickListener {
 
-            try {
-                val etEmail = findViewById<EditText>(R.id.etEmail)
-                val etSenha = findViewById<EditText>(R.id.etSenha)
+            val etEmail = findViewById<EditText>(R.id.etEmail)
+            val etSenha = findViewById<EditText>(R.id.etSenha)
 
-                if (validaFormatoEmail(etEmail) && validaFormatoSenha(etSenha)) {
+            if (validaFormatoEmail(etEmail) && validaFormatoSenha(etSenha)) {
 
-                        appAuth.createUserWithEmailAndPassword(
-                            etEmail.text.toString(),
-                            etSenha.text.toString()
-                        )
-                            .addOnCompleteListener {
-                                if (it.isSuccessful) {
-                                    appUser = appAuth.currentUser
-                                    Toast.makeText(
-                                        this,
-                                        "Cadastro realizado com sucesso!",
-                                        Toast.LENGTH_LONG
-                                    ).show()
-                                }
-
-                            }
+                appAuth.createUserWithEmailAndPassword(
+                    etEmail.text.toString(),
+                    etSenha.text.toString()
+                )
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            appUser = appAuth.currentUser
+                            Toast.makeText(
+                                this,
+                                "Cadastro realizado com sucesso!",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
-
-            } catch (ex: IllegalArgumentException) {
-                Toast.makeText(
-                    this,
-                    "O campo de e-mail e senha não podem ser nulos.",
-                    Toast.LENGTH_LONG
-                ).show()
             }
 
         }
@@ -111,7 +101,7 @@ class MainActivity : AppCompatActivity() {
     fun validaFormatoSenha(etSenha: EditText): Boolean {
         if (etSenha.text.toString().length >= 6) {
             return true
-        } else{
+        } else {
             etSenha.error = "Mínimo de 6 caracteres"
             return false
         }
