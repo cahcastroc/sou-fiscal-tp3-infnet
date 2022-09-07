@@ -1,5 +1,6 @@
 package br.edu.infnet.soufiscal
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns.EMAIL_ADDRESS
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import java.util.*
 import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
@@ -36,8 +38,18 @@ class MainActivity : AppCompatActivity() {
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
                             appUser = appAuth.currentUser
+
+                            val emailUsuario = "${appUser!!.email}"
+                            val ultimoLogin = "${Date(appUser!!.metadata!!.lastSignInTimestamp)}"
+                            intentAppActivity(emailUsuario,ultimoLogin)
+
                         } else {
                             appUser = null
+                            Toast.makeText(
+                                this,
+                                "Erro ao efetuar login, confira as credenciais.",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
             } catch (ex: IllegalArgumentException) {
@@ -69,6 +81,10 @@ class MainActivity : AppCompatActivity() {
                                 "Cadastro realizado com sucesso!",
                                 Toast.LENGTH_LONG
                             ).show()
+
+                            val emailUsuario = "${appUser!!.email}"
+                            val ultimoLogin = "Esse é o seu primeiro login!"
+                            intentAppActivity(emailUsuario,ultimoLogin)
                         }
                     }
             }
@@ -105,6 +121,14 @@ class MainActivity : AppCompatActivity() {
             etSenha.error = "Mínimo de 6 caracteres"
             return false
         }
+    }
+
+    fun intentAppActivity(emailUsuario: String, ultimoLogin:String){
+
+        val intent = Intent(this, AppActivity::class.java)
+        intent.putExtra("Email",emailUsuario)
+        intent.putExtra("UltimoLogin",ultimoLogin)
+        startActivity(intent)
     }
 }
 
