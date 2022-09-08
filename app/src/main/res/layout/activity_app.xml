@@ -4,26 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BF558B2F"
+    android:padding="20dp"
     tools:context=".AppActivity">
 
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btNovaAvaliacao"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#4527A0"
+        android:layout_marginTop="244dp"
+        android:background="@drawable/btnapp"
+        android:padding="10dp"
+        android:text="Nova Avaliação"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvLogin"
-        android:layout_width="84dp"
-        android:layout_height="50dp"
-        android:padding="0dp"
-        android:text="TextView"
-        android:textColor="#4527A0"
+    <Button
+        android:id="@+id/btDeslogar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/btnapp"
+        android:padding="10dp"
+        android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/btDados" />
+
+    <Button
+        android:id="@+id/btDados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btnapp"
+        android:padding="10dp"
+        android:text="Dados Sintetizados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btConsulta" />
+
+    <Button
+        android:id="@+id/btConsulta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/btnapp"
+        android:padding="10dp"
+        android:text="Consultar Avaliações"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btNovaAvaliacao" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
