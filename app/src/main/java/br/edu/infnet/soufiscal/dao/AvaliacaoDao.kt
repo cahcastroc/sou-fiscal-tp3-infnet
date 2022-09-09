@@ -26,15 +26,6 @@ class AvaliacaoDao {
         return db.collection(collection).add(avaliacao)
     }
 
-    fun inserir(avaliacao: Avaliacao) : Task<Void>? {
-        var task: Task<Void>? = null
-        if (avaliacao.idAvaliador == null){
-            val ref : DocumentReference = db.collection(collection).document()
-            avaliacao.idAvaliador = ref.id
-            task = ref.set(avaliacao)
-        }
-        return task
-    }
 
     fun listar() : Task<QuerySnapshot>{
         return db.collection(collection).get()
@@ -42,6 +33,11 @@ class AvaliacaoDao {
 
     fun buscaPorAvaliador(id: Int): Task<QuerySnapshot>{
         return db.collection(collection).whereEqualTo("idAvaliador",id).get()
+    }
+
+    fun avalicoesUsuario(idAvaliador : String): Task<QuerySnapshot> {
+        return db.collection(collection).whereEqualTo("idAvaliador",idAvaliador).get()
+
     }
 
 

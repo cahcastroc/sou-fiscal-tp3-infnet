@@ -33,7 +33,7 @@ class OpcoesFragment : Fragment() {
 
         val btConsulta = view.findViewById<Button>(R.id.btConsulta)
         btConsulta.setOnClickListener {
-
+            navController.navigate(R.id.action_opcoesFragment_to_consultaFragment)
         }
 
         val btDados = view.findViewById<Button>(R.id.btDados)

@@ -22,5 +22,17 @@
         <action
             android:id="@+id/action_opcoesFragment_to_novaAvaliacaoFragment"
             app:destination="@id/novaAvaliacaoFragment" />
+        <action
+            android:id="@+id/action_opcoesFragment_to_consultaFragment"
+            app:destination="@id/consultaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/consultaFragment"
+        android:name="br.edu.infnet.soufiscal.ConsultaFragment"
+        android:label="fragment_consulta"
+        tools:layout="@layout/fragment_consulta" >
+        <action
+            android:id="@+id/action_consultaFragment_to_opcoesFragment"
+            app:destination="@id/opcoesFragment" />
     </fragment>
 </navigation>
