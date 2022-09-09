@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                             appUser = null
                             Toast.makeText(
                                 this,
-                                "Erro ao efetuar login, confira as credenciais.",
+                                "Dados de credenciais inválidos ou Usuário não cadastrado.",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
@@ -86,6 +86,12 @@ class MainActivity : AppCompatActivity() {
                             val ultimoLogin = "Esse é o seu primeiro login!"
                             intentAppActivity(emailUsuario,ultimoLogin)
                         }
+                    }.addOnFailureListener {
+                        Toast.makeText(
+                            this,
+                            "Processo inválido. Caso seja cadastrado clique no botão de login.",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
             }
 

@@ -26,6 +26,14 @@ class AvaliacaoDao {
         return db.collection(collection).add(avaliacao)
     }
 
+    fun listar() : Task<QuerySnapshot>{
+        return db.collection(collection).get()
+    }
+
+    fun buscaPorAvaliador(id: Int): Task<QuerySnapshot>{
+        return db.collection(collection).whereEqualTo("idAvaliador",id).get()
+    }
+
 
 
 }
