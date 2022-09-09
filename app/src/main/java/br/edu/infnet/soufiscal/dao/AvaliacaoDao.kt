@@ -31,14 +31,15 @@ class AvaliacaoDao {
         return db.collection(collection).get()
     }
 
-    fun buscaPorAvaliador(id: Int): Task<QuerySnapshot>{
-        return db.collection(collection).whereEqualTo("idAvaliador",id).get()
-    }
+//    fun buscaPorAvaliador(id: Int): Task<QuerySnapshot>{
+//        return db.collection(collection).whereEqualTo("idAvaliador",id).get()
+//    }
 
     fun avalicoesUsuario(idAvaliador : String): Task<QuerySnapshot> {
         return db.collection(collection).whereEqualTo("idAvaliador",idAvaliador).get()
 
     }
+
 
 
 
