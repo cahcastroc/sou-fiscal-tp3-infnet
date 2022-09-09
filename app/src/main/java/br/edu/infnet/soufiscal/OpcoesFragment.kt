@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import br.edu.infnet.soufiscal.R
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -24,6 +23,8 @@ class OpcoesFragment : Fragment() {
 
         val navController = this.findNavController()
 
+
+
         val btNovaAvaliacao = view.findViewById<Button>(R.id.btNovaAvaliacao)
         btNovaAvaliacao.setOnClickListener {
 
@@ -32,13 +33,14 @@ class OpcoesFragment : Fragment() {
 
         val btConsulta = view.findViewById<Button>(R.id.btConsulta)
         btConsulta.setOnClickListener {
-            navController.navigate(R.id.action_opcoesFragment_to_consultaAvaliacaoFragment)
+
         }
 
         val btDados = view.findViewById<Button>(R.id.btDados)
         btDados.setOnClickListener {
-            navController.navigate(R.id.action_opcoesFragment_to_dadosSintetizadosFragment2)
+
         }
+
 
         val btLogout = view.findViewById<Button>(R.id.btLogout)
         btLogout.setOnClickListener {
@@ -51,7 +53,6 @@ class OpcoesFragment : Fragment() {
 
         return view
     }
-
 
 
 }

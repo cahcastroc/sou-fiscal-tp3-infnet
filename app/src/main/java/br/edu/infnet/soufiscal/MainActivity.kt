@@ -104,10 +104,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onStop() {
-        super.onStop()
-        appAuth.signOut()
-    }
+
 
 
     fun validaFormatoEmail(etEmail: EditText): Boolean {
@@ -131,7 +128,7 @@ class MainActivity : AppCompatActivity() {
 
     fun intentAppActivity(emailUsuario: String, ultimoLogin:String){
 
-        val intent = Intent(this, AppActivity::class.java)
+        val intent = Intent(this, AplicationActivity::class.java)
         intent.putExtra("Email",emailUsuario)
         intent.putExtra("UltimoLogin",ultimoLogin)
         startActivity(intent)

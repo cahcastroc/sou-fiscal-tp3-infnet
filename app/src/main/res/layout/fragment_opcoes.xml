@@ -9,6 +9,7 @@
     android:padding="20dp"
     tools:context=".OpcoesFragment">
 
+
     <Button
         android:id="@+id/btNovaAvaliacao"
         android:layout_width="0dp"
@@ -60,5 +61,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btNovaAvaliacao" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

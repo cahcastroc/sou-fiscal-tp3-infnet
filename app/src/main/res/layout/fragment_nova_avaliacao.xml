@@ -36,7 +36,7 @@
                 android:typeface="normal" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/etNovaNome"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/retangulo"
@@ -57,7 +57,7 @@
                 android:typeface="normal" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/etNovaBairro"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/retangulo"
@@ -79,17 +79,17 @@
                 android:textStyle="bold"
                 android:typeface="normal" />
             <TextView
-            android:id="@+id/q1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-light"
-            android:padding="5dp"
-            android:text="Limpeza: O local está adequadamente limpo?  "
-            android:textAlignment="center"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:typeface="normal" />
+                android:id="@+id/q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-light"
+                android:padding="5dp"
+                android:text="Limpeza: O local está adequadamente limpo?  "
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
 
             <RadioGroup
                 android:id="@+id/rdGroup1"
@@ -328,5 +328,6 @@
 
         </LinearLayout>
     </ScrollView>
+
 
 </LinearLayout>

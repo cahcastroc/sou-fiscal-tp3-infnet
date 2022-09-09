@@ -6,21 +6,6 @@
     app:startDestination="@id/opcoesFragment">
 
     <fragment
-        android:id="@+id/opcoesFragment"
-        android:name="br.edu.infnet.soufiscal.OpcoesFragment"
-        android:label="fragment_opcoes"
-        tools:layout="@layout/fragment_opcoes" >
-        <action
-            android:id="@+id/action_opcoesFragment_to_novaAvaliacaoFragment"
-            app:destination="@id/novaAvaliacaoFragment" />
-        <action
-            android:id="@+id/action_opcoesFragment_to_consultaAvaliacaoFragment"
-            app:destination="@id/consultaAvaliacaoFragment" />
-        <action
-            android:id="@+id/action_opcoesFragment_to_dadosSintetizadosFragment2"
-            app:destination="@id/dadosSintetizadosFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/novaAvaliacaoFragment"
         android:name="br.edu.infnet.soufiscal.NovaAvaliacaoFragment"
         android:label="fragment_nova_avaliacao"
@@ -30,21 +15,12 @@
             app:destination="@id/opcoesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/consultaAvaliacaoFragment"
-        android:name="br.edu.infnet.soufiscal.ConsultaAvaliacaoFragment"
-        android:label="fragment_consulta_avaliacao"
-        tools:layout="@layout/fragment_consulta_avaliacao" >
+        android:id="@+id/opcoesFragment"
+        android:name="br.edu.infnet.soufiscal.OpcoesFragment"
+        android:label="fragment_opcoes"
+        tools:layout="@layout/fragment_opcoes" >
         <action
-            android:id="@+id/action_consultaAvaliacaoFragment_to_opcoesFragment"
-            app:destination="@id/opcoesFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/dadosSintetizadosFragment"
-        android:name="br.edu.infnet.soufiscal.DadosSintetizadosFragment"
-        android:label="fragment_dados_sintetizados"
-        tools:layout="@layout/fragment_dados_sintetizados" >
-        <action
-            android:id="@+id/action_dadosSintetizadosFragment_to_opcoesFragment"
-            app:destination="@id/opcoesFragment" />
+            android:id="@+id/action_opcoesFragment_to_novaAvaliacaoFragment"
+            app:destination="@id/novaAvaliacaoFragment" />
     </fragment>
 </navigation>
