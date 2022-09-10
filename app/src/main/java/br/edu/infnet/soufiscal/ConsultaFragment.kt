@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.edu.infnet.soufiscal.criptografia.Criptografador
 import br.edu.infnet.soufiscal.dao.AvaliacaoDao
 import br.edu.infnet.soufiscal.model.Avaliacao
 import br.edu.infnet.soufiscal.recyclerView.AvaliacaoUsuarioAdapter
@@ -19,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 class ConsultaFragment : Fragment(), RecyclerViewItemListener {
     private val avaliacaoDao = AvaliacaoDao()
     private lateinit var adapter: AvaliacaoUsuarioAdapter
+    private val criptografador = Criptografador()
 
 
     override fun onCreateView(
@@ -42,6 +44,8 @@ class ConsultaFragment : Fragment(), RecyclerViewItemListener {
 
                 for (documento in it) {
                     var avaliacao = documento.toObject(Avaliacao::class.java)
+//                    var nome = Criptografador().descriptografar(avaliacao.nome!!)
+
                     avaliacoesUsuario.add(avaliacao)
                     Log.i("DR3", "${avaliacoesUsuario}")
                 }

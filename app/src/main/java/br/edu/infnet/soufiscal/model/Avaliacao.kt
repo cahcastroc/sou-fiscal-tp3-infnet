@@ -1,5 +1,6 @@
 package br.edu.infnet.soufiscal.model
 
+import br.edu.infnet.soufiscal.criptografia.CriptoString
 
 
 data class Avaliacao(

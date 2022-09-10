@@ -55,7 +55,7 @@ class AvaliacaoUsuarioAdapter() : RecyclerView.Adapter<AvaliacaoUsuarioAdapter.V
             val btDeletar = itemView.findViewById<Button>(R.id.btDeletar)
 
 
-            tvRvNome.text = avaliacao.nome
+            tvRvNome.text = avaliacao.nome.toString()
             tvRvBairro.text = avaliacao.bairro
             tvRvLimpeza.text = avaliacao.limpeza
             tvRvOrganizacao.text = avaliacao.organizacao

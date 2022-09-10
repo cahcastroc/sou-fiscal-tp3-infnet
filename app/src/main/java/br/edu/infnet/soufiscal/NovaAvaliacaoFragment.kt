@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.findFragment
 import androidx.navigation.fragment.findNavController
+import br.edu.infnet.soufiscal.criptografia.Criptografador
 import br.edu.infnet.soufiscal.dao.AvaliacaoDao
 import br.edu.infnet.soufiscal.model.Avaliacao
 import com.google.firebase.auth.FirebaseAuth
@@ -19,11 +20,15 @@ class NovaAvaliacaoFragment : Fragment() {
 
     private lateinit var avaliacao: Avaliacao
 
+    private val criptografador = Criptografador()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
 
         val view = inflater.inflate(R.layout.fragment_nova_avaliacao, container, false)
 
@@ -82,12 +87,18 @@ class NovaAvaliacaoFragment : Fragment() {
             }
         }
 
+
+
+
         btSalvar.setOnClickListener {
+
+
+            val nome = criptografador.criptografar(etNovaNome.text.toString())
 
             val avaliacao = Avaliacao(
                 null,
                 idFiscal,
-                etNovaNome.text.toString(),
+                nome,
                 etNovaBairro.text.toString(),
                 limpeza, organizacao, validade, documentacao, controle, refrigeracao
             )
