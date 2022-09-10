@@ -43,10 +43,18 @@ class ConsultaFragment : Fragment(), RecyclerViewItemListener {
                 val avaliacoesUsuario = ArrayList<Avaliacao>()
 
                 for (documento in it) {
-                    var avaliacao = documento.toObject(Avaliacao::class.java)
-//                    var nome = Criptografador().descriptografar(avaliacao.nome!!)
-
+                    var avaliacao = documento.toObject(Avaliacao::class.java)//
                     avaliacoesUsuario.add(avaliacao)
+
+        //--- Não consegui desencriptar depois que enviei para o banco. Não encontrei soluções válidas
+        //--- para isso com o Firestore, somente com o Room/Sql (através do conteúdo ministrado pelo Prof. com o uso do TypeConverter e
+        //--- a criação de um tipo específico). Logo não realizei a encriptação do nome do bairro devido a necessidade dele para o relatório sintético.
+
+
+                    avaliacoesUsuario.forEach {
+                        it.nome =  it.nome?.substring(0,5) +" (criptografado)"
+                    }
+
                     Log.i("DR3", "${avaliacoesUsuario}")
                 }
 

@@ -88,12 +88,11 @@ class NovaAvaliacaoFragment : Fragment() {
         }
 
 
-
-
         btSalvar.setOnClickListener {
 
 
             val nome = criptografador.criptografar(etNovaNome.text.toString())
+
 
             val avaliacao = Avaliacao(
                 null,
