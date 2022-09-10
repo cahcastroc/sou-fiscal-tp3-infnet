@@ -44,6 +44,7 @@
                 android:hint="Insira o nome do local"
                 android:inputType="textPersonName"
                 android:padding="10dp" />
+
             <TextView
                 android:id="@+id/tvBairroNovo"
                 android:layout_width="match_parent"
@@ -78,6 +79,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="normal" />
+
             <TextView
                 android:id="@+id/q1"
                 android:layout_width="match_parent"
@@ -91,33 +93,13 @@
                 android:textStyle="bold"
                 android:typeface="normal" />
 
-            <RadioGroup
-                android:id="@+id/rdGroup1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb1sim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sim" />
-
-                    <RadioButton
-                        android:id="@+id/rb1nao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não" />
-
-                </LinearLayout>
-
-            </RadioGroup>
-
+            <CheckBox
+                android:id="@+id/cB1"
+                style="@style/Widget.Material3.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false" />
 
             <TextView
                 android:id="@+id/q2"
@@ -132,32 +114,12 @@
                 android:textStyle="bold"
                 android:typeface="normal" />
 
-            <RadioGroup
-                android:id="@+id/rdGroup2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb2sim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sim" />
-
-                    <RadioButton
-                        android:id="@+id/rb2nao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não" />
-
-                </LinearLayout>
-
-            </RadioGroup>
+            <CheckBox
+                android:id="@+id/cB2"
+                style="@style/Widget.Material3.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false" />
 
             <TextView
                 android:id="@+id/q3"
@@ -171,33 +133,12 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:typeface="normal" />
-
-            <RadioGroup
-                android:id="@+id/rdGroup3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb3sim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sim" />
-
-                    <RadioButton
-                        android:id="@+id/rb3nao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não" />
-
-                </LinearLayout>
-
-            </RadioGroup>
+            <CheckBox
+                android:id="@+id/cB3"
+                style="@style/Widget.Material3.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false" />
 
             <TextView
                 android:id="@+id/q4"
@@ -211,33 +152,12 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:typeface="normal" />
-
-            <RadioGroup
-                android:id="@+id/rdGroup4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb4sim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sim" />
-
-                    <RadioButton
-                        android:id="@+id/rb4nao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não" />
-
-                </LinearLayout>
-
-            </RadioGroup>
+            <CheckBox
+                android:id="@+id/cB4"
+                style="@style/Widget.Material3.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false" />
 
             <TextView
                 android:id="@+id/q5"
@@ -251,33 +171,12 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:typeface="normal" />
-
-            <RadioGroup
-                android:id="@+id/rdGroup5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb5sim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sim" />
-
-                    <RadioButton
-                        android:id="@+id/rb5nao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não" />
-
-                </LinearLayout>
-
-            </RadioGroup>
+            <CheckBox
+                android:id="@+id/cB5"
+                style="@style/Widget.Material3.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false" />
 
             <TextView
                 android:id="@+id/q6"
@@ -291,33 +190,12 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:typeface="normal" />
-
-            <RadioGroup
-                android:id="@+id/rdGroup6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb6sim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sim" />
-
-                    <RadioButton
-                        android:id="@+id/rb6nao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Não" />
-
-                </LinearLayout>
-
-            </RadioGroup>
+            <CheckBox
+                android:id="@+id/cB6"
+                style="@style/Widget.Material3.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false" />
 
             <Button
                 android:id="@+id/btSalvar"

@@ -22,10 +22,9 @@ class AvaliacaoDao {
         .collection(collection)
         .addSnapshotListener(listener)
 
-    fun add(avaliacao: Avaliacao): Task<DocumentReference>{
-        return db.collection(collection).add(avaliacao)
-    }
-
+//    fun add(avaliacao: Avaliacao): Task<DocumentReference>{
+//        return db.collection(collection).add(avaliacao)
+//    }
 
     fun listar() : Task<QuerySnapshot>{
         return db.collection(collection).get()
@@ -35,11 +34,28 @@ class AvaliacaoDao {
 //        return db.collection(collection).whereEqualTo("idAvaliador",id).get()
 //    }
 
-    fun avalicoesUsuario(idAvaliador : String): Task<QuerySnapshot> {
-        return db.collection(collection).whereEqualTo("idAvaliador",idAvaliador).get()
+    fun avalicoesUsuario(avaliador : String): Task<QuerySnapshot> {
+        return db.collection(collection).whereEqualTo("avaliador",avaliador).get()
 
     }
 
+    fun del(id: String) : Task<Void> {
+        return db.collection(collection).document(id).delete()
+    }
+
+//    fun listarUsuario(idAvaliador : String) : Task<QuerySnapshot>{
+//        return db.collection(collection).whereEqualTo("idAvaliador",idAvaliador).get()
+//    }
+
+    fun inserir(avaliacao: Avaliacao) : Task<Void>? {
+        var task: Task<Void>? = null
+        if (avaliacao.id == null){
+            val ref : DocumentReference = db.collection(collection).document()
+            avaliacao.id = ref.id
+            task = ref.set(avaliacao)
+        }
+        return task
+    }
 
 
 

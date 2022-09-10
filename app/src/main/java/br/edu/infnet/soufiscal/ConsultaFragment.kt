@@ -19,74 +19,58 @@ import com.google.firebase.auth.FirebaseAuth
 class ConsultaFragment : Fragment(), RecyclerViewItemListener {
     private val avaliacaoDao = AvaliacaoDao()
     private lateinit var adapter: AvaliacaoUsuarioAdapter
-    private lateinit var recyclerView: RecyclerView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val view= inflater.inflate(R.layout.fragment_consulta, container, false)
+        val view = inflater.inflate(R.layout.fragment_consulta, container, false)
 
-        val idAvaliador = FirebaseAuth.getInstance().currentUser?.email
-
-
-
-        if (idAvaliador != null) {
-
-
-            avaliacaoDao.avalicoesUsuario(idAvaliador).addOnSuccessListener {
-                val avaliacoesUsuario = ArrayList<Avaliacao>()
-
-                for (documento in it){
-                    var avaliacao = documento.toObject(Avaliacao::class.java)
-                    avaliacoesUsuario.add(avaliacao)
-                    Log.i("DR3","${avaliacoesUsuario}")
-                }
-
-                val rvConsultaAvaliador = view.findViewById<RecyclerView>(R.id.rvConsultaAvaliador)
-                rvConsultaAvaliador.layoutManager = LinearLayoutManager(context)
-                adapter = AvaliacaoUsuarioAdapter()
-                adapter.listaAvaliacao = avaliacoesUsuario
-                adapter.setRecyclerViewItemListener(this)
-                rvConsultaAvaliador.adapter = adapter
-
-            }.addOnFailureListener {
-                Toast.makeText(activity,"Falha", Toast.LENGTH_LONG).show()
-            }
-
-
-        }
-
-
-
+        atualizar()
 
         return view
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        listar()
-//
-//    }
+    fun atualizar() {
+        val avaliador = FirebaseAuth.getInstance().currentUser?.email
+        if (avaliador != null) {
 
-    private fun listar(){
-        avaliacaoDao.listar().addOnSuccessListener {
+            avaliacaoDao.avalicoesUsuario(avaliador).addOnSuccessListener {
+                val avaliacoesUsuario = ArrayList<Avaliacao>()
 
+                for (documento in it) {
+                    var avaliacao = documento.toObject(Avaliacao::class.java)
+                    avaliacoesUsuario.add(avaliacao)
+                    Log.i("DR3", "${avaliacoesUsuario}")
+                }
+
+                val rvConsultaAvaliador = view?.findViewById<RecyclerView>(R.id.rvConsultaAvaliador)
+                rvConsultaAvaliador?.layoutManager = LinearLayoutManager(context)
+                adapter = AvaliacaoUsuarioAdapter()
+                adapter.listaAvaliacao = avaliacoesUsuario
+                adapter.setRecyclerViewItemListener(this)
+                rvConsultaAvaliador?.adapter = adapter
+
+            }.addOnFailureListener {
+                Toast.makeText(activity, "Falha", Toast.LENGTH_LONG).show()
+            }
         }
     }
+
 
     override fun recyclerViewItemClicked(view: View, id: String) {
 
     }
 
-    override fun recyclerViewItemClickedLong(view: View, id: Int) {
 
-    }
+    override fun recyclerViewItemDeletarClicked(view: View, id: String) {
+        avaliacaoDao.del(id).addOnSuccessListener {
 
-    override fun recyclerViewItemDeletarClicked(view: View, position: Int) {
-
+            Toast.makeText(activity, "Item deletado", Toast.LENGTH_LONG).show()
+        }
+        atualizar()
     }
 
 
