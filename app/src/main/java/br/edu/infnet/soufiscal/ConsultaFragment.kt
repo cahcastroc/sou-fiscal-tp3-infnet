@@ -77,7 +77,8 @@ class ConsultaFragment : Fragment(), RecyclerViewItemListener {
     }
 
 
-    override fun recyclerViewItemDeletarClicked(view: View, id: String) {
+
+    override fun recyclerViewItemLongClicked(view: View, id: String) {
         avaliacaoDao.del(id).addOnSuccessListener {
 
             Toast.makeText(activity, "Item deletado", Toast.LENGTH_LONG).show()

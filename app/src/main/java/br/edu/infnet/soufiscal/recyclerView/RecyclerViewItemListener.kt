@@ -7,7 +7,8 @@ interface RecyclerViewItemListener {
 
     fun recyclerViewItemClicked(view: View, id: String)
 
-    fun recyclerViewItemDeletarClicked(view: View, id: String)
+
+    fun recyclerViewItemLongClicked(view: View, id: String)
 
 
 

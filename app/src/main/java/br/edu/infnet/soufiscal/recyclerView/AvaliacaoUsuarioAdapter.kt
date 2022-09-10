@@ -52,7 +52,7 @@ class AvaliacaoUsuarioAdapter() : RecyclerView.Adapter<AvaliacaoUsuarioAdapter.V
             val tvRvDocumentacao = itemView.findViewById<TextView>(R.id.tvRvDocumentacao)
             val tvRvControle = itemView.findViewById<TextView>(R.id.tvRvControle)
             val tvRvRefrigeracao = itemView.findViewById<TextView>(R.id.tvRvRefrigeracao)
-            val btDeletar = itemView.findViewById<Button>(R.id.btDeletar)
+
 
 
             tvRvNome.text = avaliacao.nome.toString()
@@ -65,11 +65,18 @@ class AvaliacaoUsuarioAdapter() : RecyclerView.Adapter<AvaliacaoUsuarioAdapter.V
             tvRvRefrigeracao.text = avaliacao.refrigeracao
 
 
+            itemView.setOnClickListener {
+                itemListener.recyclerViewItemLongClicked(it,avaliacao.id!!)
+            }
 
-            btDeletar.setOnClickListener {
-                 itemListener.recyclerViewItemDeletarClicked(it,avaliacao.id!!)
+//            btDeletar.setOnClickListener {
+//                 itemListener.recyclerViewItemDeletarClicked(it,avaliacao.id!!)
+//
+//                }
 
-                }
+
+
+
             }
 
 

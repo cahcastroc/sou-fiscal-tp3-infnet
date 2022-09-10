@@ -43,9 +43,6 @@ class AvaliacaoDao {
         return db.collection(collection).document(id).delete()
     }
 
-//    fun listarUsuario(idAvaliador : String) : Task<QuerySnapshot>{
-//        return db.collection(collection).whereEqualTo("idAvaliador",idAvaliador).get()
-//    }
 
     fun inserir(avaliacao: Avaliacao) : Task<Void>? {
         var task: Task<Void>? = null

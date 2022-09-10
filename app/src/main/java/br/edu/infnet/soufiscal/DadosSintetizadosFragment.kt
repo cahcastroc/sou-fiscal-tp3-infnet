@@ -121,15 +121,13 @@ class DadosSintetizadosFragment : Fragment(), RecyclerViewItemListener,AdapterVi
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
-
     }
 
     override fun recyclerViewItemClicked(view: View, id: String) {
-
     }
 
-    override fun recyclerViewItemDeletarClicked(view: View, id: String) {
 
+    override fun recyclerViewItemLongClicked(view: View, id: String) {
     }
 
 
