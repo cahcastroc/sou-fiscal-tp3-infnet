@@ -62,6 +62,10 @@ class AvaliacaoDao {
 //        whereEqualTo("bairro",bairro).orderBy("bairro")
 //           .get()
     }
+
+    fun buscaPorBairroExato(bairro: String): Task<QuerySnapshot> {
+        return db.collection(collection).whereEqualTo("bairro",bairro).get()
+    }
     fun buscaPorBairroLimpeza(bairro:String): Task<QuerySnapshot> {
         return db.collection(collection).whereEqualTo("bairro",bairro)
             .whereEqualTo("limpeza","Sim").get()

@@ -100,7 +100,7 @@ class DadosSintetizadosFragment : Fragment(), RecyclerViewItemListener,AdapterVi
 
         val bairro = adapterView?.getItemAtPosition(position).toString()
 
-        avaliacaoDao.buscaPorBairroLimpeza(bairro).addOnSuccessListener {
+        avaliacaoDao.buscaPorBairroExato(bairro).addOnSuccessListener {
                 val bairros = ArrayList<Avaliacao>()
 
             for (documento in it){
@@ -108,6 +108,7 @@ class DadosSintetizadosFragment : Fragment(), RecyclerViewItemListener,AdapterVi
             }
 
             val rvListaBairro = requireView().findViewById<RecyclerView>(R.id.rvListaBairro)
+
             val adapter = rvListaBairro!!.adapter as DadosSintetizadosAdapter
 
             adapter.listaBairros = bairros
