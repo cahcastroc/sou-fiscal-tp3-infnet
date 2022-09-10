@@ -48,7 +48,7 @@ class ConsultaFragment : Fragment(), RecyclerViewItemListener {
 
         //--- Não consegui desencriptar depois que enviei para o banco. Não encontrei soluções válidas
         //--- para isso com o Firestore, somente com o Room/Sql (através do conteúdo ministrado pelo Prof. com o uso do TypeConverter e
-        //--- a criação de um tipo específico). Logo não realizei a encriptação do nome do bairro devido a necessidade dele para o relatório sintético.
+        //--- a criação de um tipo específico). Logo não realizei a encriptação do nome e do bairro devido a necessidade deles para o relatório sintético.
 
 
                     avaliacoesUsuario.forEach {

@@ -57,6 +57,16 @@ class AvaliacaoDao {
         return task
     }
 
+    fun buscaPorBairro(): Task<QuerySnapshot> {
+        return db.collection(collection).orderBy("bairro").get()
+//        whereEqualTo("bairro",bairro).orderBy("bairro")
+//           .get()
+    }
+    fun buscaPorBairroLimpeza(bairro:String): Task<QuerySnapshot> {
+        return db.collection(collection).whereEqualTo("bairro",bairro)
+            .whereEqualTo("limpeza","Sim").get()
+    }
+
 
 
 }

@@ -38,7 +38,7 @@ class OpcoesFragment : Fragment() {
 
         val btDados = view.findViewById<Button>(R.id.btDados)
         btDados.setOnClickListener {
-
+            navController.navigate(R.id.action_opcoesFragment_to_dadosSintetizadosFragment)
         }
 
 

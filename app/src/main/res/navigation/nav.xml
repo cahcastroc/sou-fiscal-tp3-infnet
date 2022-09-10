@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_opcoesFragment_to_consultaFragment"
             app:destination="@id/consultaFragment" />
+        <action
+            android:id="@+id/action_opcoesFragment_to_dadosSintetizadosFragment"
+            app:destination="@id/dadosSintetizadosFragment" />
     </fragment>
     <fragment
         android:id="@+id/consultaFragment"
@@ -33,6 +36,15 @@
         tools:layout="@layout/fragment_consulta" >
         <action
             android:id="@+id/action_consultaFragment_to_opcoesFragment"
+            app:destination="@id/opcoesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dadosSintetizadosFragment"
+        android:name="br.edu.infnet.soufiscal.DadosSintetizadosFragment"
+        android:label="fragment_dados_sintetizados"
+        tools:layout="@layout/fragment_dados_sintetizados" >
+        <action
+            android:id="@+id/action_dadosSintetizadosFragment_to_opcoesFragment"
             app:destination="@id/opcoesFragment" />
     </fragment>
 </navigation>
