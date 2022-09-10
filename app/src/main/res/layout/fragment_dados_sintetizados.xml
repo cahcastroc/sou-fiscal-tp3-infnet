@@ -10,10 +10,13 @@
 
     <Spinner
         android:id="@+id/spBairros"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#1E567A3C"
+        android:background="#A3ACC3AD"
+        android:contentDescription="@string/selecione"
+        android:filterTouchesWhenObscured="false"
         android:minHeight="32dp"
+        android:popupBackground="@color/principal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

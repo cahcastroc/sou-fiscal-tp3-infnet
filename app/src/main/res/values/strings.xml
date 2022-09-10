@@ -5,4 +5,5 @@
     <string name="nome_do_estabelecimento">Nome do estabelecimento:</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
+    <string name="selecione">Selecione o bairro…</string>
 </resources>

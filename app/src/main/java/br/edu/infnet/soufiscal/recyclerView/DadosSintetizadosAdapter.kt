@@ -49,6 +49,8 @@ class DadosSintetizadosAdapter(itemListener: RecyclerViewItemListener) : Recycle
             val tvQtdRefrigeracao = itemView.findViewById<TextView>(R.id.tvQtdRefrigeracao)
             val tvQtdControle = itemView.findViewById<TextView>(R.id.tvQtdControle)
 
+
+
             tvNomeBairro.text = avaliacao.bairro
             tvQtdLimpeza.text= avaliacao.limpeza
             tvQtdOrganizacao.text = avaliacao.organizacao

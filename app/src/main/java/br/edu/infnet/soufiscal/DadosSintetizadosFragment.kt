@@ -107,6 +107,8 @@ class DadosSintetizadosFragment : Fragment(), RecyclerViewItemListener,AdapterVi
                 bairros.add(documento.toObject(Avaliacao::class.java))
             }
 
+
+
             val rvListaBairro = requireView().findViewById<RecyclerView>(R.id.rvListaBairro)
 
             val adapter = rvListaBairro!!.adapter as DadosSintetizadosAdapter
