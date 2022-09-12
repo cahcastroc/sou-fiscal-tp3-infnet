@@ -13,7 +13,7 @@ class AvaliacaoDao {
     private val collection = "avaliacoes"
     val db = Firebase.firestore
 
-    fun setUpSnapShotListener (
+    fun setUpSnapShotListener(
         listener: (
             QuerySnapshot?,
             FirebaseFirestoreException?
@@ -22,32 +22,26 @@ class AvaliacaoDao {
         .collection(collection)
         .addSnapshotListener(listener)
 
-//    fun add(avaliacao: Avaliacao): Task<DocumentReference>{
-//        return db.collection(collection).add(avaliacao)
-//    }
 
-    fun listar() : Task<QuerySnapshot>{
+    fun listar(): Task<QuerySnapshot> {
         return db.collection(collection).get()
     }
 
-//    fun buscaPorAvaliador(id: Int): Task<QuerySnapshot>{
-//        return db.collection(collection).whereEqualTo("idAvaliador",id).get()
-//    }
 
-    fun avalicoesUsuario(avaliador : String): Task<QuerySnapshot> {
-        return db.collection(collection).whereEqualTo("avaliador",avaliador).get()
+    fun avalicoesUsuario(avaliador: String): Task<QuerySnapshot> {
+        return db.collection(collection).whereEqualTo("avaliador", avaliador).get()
 
     }
 
-    fun del(id: String) : Task<Void> {
+    fun del(id: String): Task<Void> {
         return db.collection(collection).document(id).delete()
     }
 
 
-    fun inserir(avaliacao: Avaliacao) : Task<Void>? {
+    fun inserir(avaliacao: Avaliacao): Task<Void>? {
         var task: Task<Void>? = null
-        if (avaliacao.id == null){
-            val ref : DocumentReference = db.collection(collection).document()
+        if (avaliacao.id == null) {
+            val ref: DocumentReference = db.collection(collection).document()
             avaliacao.id = ref.id
             task = ref.set(avaliacao)
         }
@@ -56,18 +50,17 @@ class AvaliacaoDao {
 
     fun buscaPorBairro(): Task<QuerySnapshot> {
         return db.collection(collection).orderBy("bairro").get()
-//        whereEqualTo("bairro",bairro).orderBy("bairro")
-//           .get()
     }
 
     fun buscaPorBairroExato(bairro: String): Task<QuerySnapshot> {
-        return db.collection(collection).whereEqualTo("bairro",bairro).get()
-    }
-    fun buscaPorBairroLimpeza(bairro:String): Task<QuerySnapshot> {
-        return db.collection(collection).whereEqualTo("bairro",bairro)
-            .whereEqualTo("limpeza","Sim").get()
+
+        return db.collection(collection).whereEqualTo("bairro", bairro).get()
     }
 
 
-
+    fun alterar(id: String): Task<Void> {
+        return db.collection(collection).document(id)
+            .update("documentacao", "Alerta!")
+    }
 }
+

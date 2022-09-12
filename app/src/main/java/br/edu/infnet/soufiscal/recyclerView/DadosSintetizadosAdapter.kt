@@ -11,7 +11,8 @@ import br.edu.infnet.soufiscal.dao.AvaliacaoDao
 import br.edu.infnet.soufiscal.model.Avaliacao
 
 
-class DadosSintetizadosAdapter(itemListener: RecyclerViewItemListener) : RecyclerView.Adapter<DadosSintetizadosAdapter.ViewHolder>() {
+class DadosSintetizadosAdapter(itemListener: RecyclerViewItemListener) :
+    RecyclerView.Adapter<DadosSintetizadosAdapter.ViewHolder>() {
 
 
     var listaBairros = ArrayList<Avaliacao>()
@@ -52,7 +53,7 @@ class DadosSintetizadosAdapter(itemListener: RecyclerViewItemListener) : Recycle
 
 
             tvNomeBairro.text = avaliacao.bairro
-            tvQtdLimpeza.text= avaliacao.limpeza
+            tvQtdLimpeza.text = avaliacao.limpeza
             tvQtdOrganizacao.text = avaliacao.organizacao
             tvQtdValidade.text = avaliacao.validadeInsumos
             tvQtdRefrigeracao.text = avaliacao.refrigeracao
@@ -60,55 +61,11 @@ class DadosSintetizadosAdapter(itemListener: RecyclerViewItemListener) : Recycle
             tvQtdDocumentacao.text = avaliacao.documentacao
 
 
-
-
-
-
-
-
-
-
-//            val avaliacaoDao = AvaliacaoDao()
-
-//
-//            val bairros = LinkedHashSet<String>()
-//            avaliacaoDao.buscaPorBairro().addOnSuccessListener {
-//
-//                for (documento in it) {
-//                    var avaliacao = documento.toObject(Avaliacao::class.java)
-//                    if (avaliacao.bairro != null) {
-//                        bairros.add(avaliacao.bairro!!)
-//                        Log.i("DR3", "${bairros}, ${bairros.size}")
-//                    }
-//                }
-//                for(bairro in bairros){
-//                    avaliacaoDao.buscaPorBairroLimpeza(bairro).addOnSuccessListener {
-//                        var qtdLimpeza = 0;
-//
-//                    val bairrosU = ArrayList<Avaliacao>()
-//                    for (documento in it) {
-//                        var bairrosteste = (documento.toObject(Avaliacao::class.java))
-//                        tvNomeBairro.text = bairrosteste.bairro
-//                }
-//
-////                        bairrosU.add
-//                        qtdLimpeza = bairrosU.size
-//                        if (tvQtdLimpeza != null) {
-//                            tvQtdLimpeza.text = qtdLimpeza.toString()
-//                        }
-//
-//                        Log.i("DR3", "${bairrosU}, ${qtdLimpeza}")
-//
-//                    }
-//                }
-////                   bairros.add(avaliacao.bairro!!)
-
-
-            }
-
-
         }
 
 
     }
+
+
+}
 

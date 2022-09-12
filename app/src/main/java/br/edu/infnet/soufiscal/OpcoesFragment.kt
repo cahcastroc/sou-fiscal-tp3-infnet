@@ -18,11 +18,10 @@ class OpcoesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-       val view = inflater.inflate(R.layout.fragment_opcoes, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_opcoes, container, false)
 
         val navController = this.findNavController()
-
 
 
         val btNovaAvaliacao = view.findViewById<Button>(R.id.btNovaAvaliacao)

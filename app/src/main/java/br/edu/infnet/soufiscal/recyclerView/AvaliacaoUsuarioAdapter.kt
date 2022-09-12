@@ -14,14 +14,14 @@ import br.edu.infnet.soufiscal.model.Avaliacao
 class AvaliacaoUsuarioAdapter() : RecyclerView.Adapter<AvaliacaoUsuarioAdapter.ViewHolder>() {
 
     var listaAvaliacao = ArrayList<Avaliacao>()
-        set(value){
+        set(value) {
             field = value
             notifyDataSetChanged()
         }
 
     lateinit var itemListener: RecyclerViewItemListener
 
-    fun setRecyclerViewItemListener(listener: RecyclerViewItemListener){
+    fun setRecyclerViewItemListener(listener: RecyclerViewItemListener) {
 
         itemListener = listener
     }
@@ -30,20 +30,20 @@ class AvaliacaoUsuarioAdapter() : RecyclerView.Adapter<AvaliacaoUsuarioAdapter.V
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.avaliacao_usuario_linha,parent, false)
+            .inflate(R.layout.avaliacao_usuario_linha, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(listaAvaliacao[position],itemListener,position)
+        holder.bindItem(listaAvaliacao[position], itemListener, position)
     }
 
     override fun getItemCount(): Int {
         return listaAvaliacao.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bindItem(avaliacao: Avaliacao, itemListener: RecyclerViewItemListener, position: Int){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bindItem(avaliacao: Avaliacao, itemListener: RecyclerViewItemListener, position: Int) {
             val tvRvNome = itemView.findViewById<TextView>(R.id.tvRvNome)
             val tvRvBairro = itemView.findViewById<TextView>(R.id.tvRvBairro)
             val tvRvLimpeza = itemView.findViewById<TextView>(R.id.tvRvLimpeza)
@@ -66,19 +66,16 @@ class AvaliacaoUsuarioAdapter() : RecyclerView.Adapter<AvaliacaoUsuarioAdapter.V
 
 
             itemView.setOnClickListener {
-                itemListener.recyclerViewItemLongClicked(it,avaliacao.id!!)
+                itemListener.recyclerViewItemLongClicked(it, avaliacao.id!!)
             }
 
-//            btDeletar.setOnClickListener {
-//                 itemListener.recyclerViewItemDeletarClicked(it,avaliacao.id!!)
-//
-//                }
-
-
-
-
+            itemView.setOnClickListener {
+                itemListener.recyclerViewItemClicked(it, avaliacao.id!!)
             }
 
 
         }
+
+
     }
+}

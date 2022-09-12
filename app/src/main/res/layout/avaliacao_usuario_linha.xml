@@ -6,19 +6,22 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="20dp"
     android:background="#1EFFFFFF"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:foregroundGravity="center"
         app:cardBackgroundColor="#E6FFFFFF"
         app:cardCornerRadius="10dp">
 
         <TableLayout
             android:id="@+id/tableLayout"
-            android:layout_width="410dp"
+            android:layout_width="400dp"
             android:layout_height="157dp"
+            android:layout_gravity="center"
             android:gravity="center|center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,28 +35,30 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Nome:" />
+                    android:layout_margin="5dp"
+                    android:text="Nome:"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvNome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Bairro:" />
+                    android:layout_margin="5dp"
+                    android:text="Bairro:"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvBairro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
             </TableRow>
 
@@ -65,28 +70,30 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Limpeza:" />
+                    android:layout_margin="5dp"
+                    android:text="Limpeza:"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvLimpeza"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Organização:" />
+                    android:layout_margin="5dp"
+                    android:text="Organização:"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvOrganizacao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
 
             </TableRow>
@@ -99,28 +106,30 @@
                     android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Validade:" />
+                    android:layout_margin="5dp"
+                    android:text="Validade:"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvValidade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Documentação: " />
+                    android:layout_margin="5dp"
+                    android:text="Documentação: "
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvDocumentacao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
             </TableRow>
 
@@ -132,28 +141,30 @@
                     android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Controle:" />
+                    android:layout_margin="5dp"
+                    android:text="Controle:"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvControle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/textView23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Refrigeração: " />
+                    android:layout_margin="5dp"
+                    android:text="Refrigeração: "
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvRvRefrigeracao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="5dp"
                     android:text="TextView" />
 
             </TableRow>

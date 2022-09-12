@@ -23,7 +23,6 @@ class NovaAvaliacaoFragment : Fragment() {
     private val criptografador = Criptografador()
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

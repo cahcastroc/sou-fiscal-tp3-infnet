@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
                             val emailUsuario = "${appUser!!.email}"
                             val ultimoLogin = "${Date(appUser!!.metadata!!.lastSignInTimestamp)}"
-                            intentAppActivity(emailUsuario,ultimoLogin)
+                            intentAppActivity(emailUsuario, ultimoLogin)
 
                         } else {
                             appUser = null
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
                             val emailUsuario = "${appUser!!.email}"
                             val ultimoLogin = "Esse é o seu primeiro login!"
-                            intentAppActivity(emailUsuario,ultimoLogin)
+                            intentAppActivity(emailUsuario, ultimoLogin)
                         }
                     }.addOnFailureListener {
                         Toast.makeText(
@@ -103,8 +103,6 @@ class MainActivity : AppCompatActivity() {
         appUser = appAuth.currentUser
 
     }
-
-
 
 
     fun validaFormatoEmail(etEmail: EditText): Boolean {
@@ -126,11 +124,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun intentAppActivity(emailUsuario: String, ultimoLogin:String){
+    fun intentAppActivity(emailUsuario: String, ultimoLogin: String) {
 
         val intent = Intent(this, AplicationActivity::class.java)
-        intent.putExtra("Email",emailUsuario)
-        intent.putExtra("UltimoLogin",ultimoLogin)
+        intent.putExtra("Email", emailUsuario)
+        intent.putExtra("UltimoLogin", ultimoLogin)
         startActivity(intent)
     }
 }

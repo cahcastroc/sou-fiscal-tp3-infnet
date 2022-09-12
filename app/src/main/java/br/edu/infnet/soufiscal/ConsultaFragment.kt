@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 class ConsultaFragment : Fragment(), RecyclerViewItemListener {
     private val avaliacaoDao = AvaliacaoDao()
     private lateinit var adapter: AvaliacaoUsuarioAdapter
-    private val criptografador = Criptografador()
+//    private val criptografador = Criptografador()
 
 
     override fun onCreateView(
@@ -31,6 +31,7 @@ class ConsultaFragment : Fragment(), RecyclerViewItemListener {
         val view = inflater.inflate(R.layout.fragment_consulta, container, false)
 
         atualizar()
+
 
         return view
     }
@@ -46,16 +47,15 @@ class ConsultaFragment : Fragment(), RecyclerViewItemListener {
                     var avaliacao = documento.toObject(Avaliacao::class.java)//
                     avaliacoesUsuario.add(avaliacao)
 
-        //--- Não consegui desencriptar depois que enviei para o banco. Não encontrei soluções válidas
-        //--- para isso com o Firestore, somente com o Room/Sql (através do conteúdo ministrado pelo Prof. com o uso do TypeConverter e
-        //--- a criação de um tipo específico). Logo não realizei a encriptação do nome e do bairro devido a necessidade deles para o relatório sintético.
+                    //--- Não consegui desencriptar depois que enviei para o banco. Não encontrei soluções válidas
+                    //--- para isso com o Firestore, somente com o Room/Sql (através do conteúdo ministrado pelo Prof. com o uso do TypeConverter e
+                    //--- a criação de um tipo específico). Logo não realizei a encriptação do nome e do bairro devido a necessidade deles para o relatório sintético.
 
 
                     avaliacoesUsuario.forEach {
-                        it.nome =  it.nome?.substring(0,5) +" (criptografado)"
+                        it.nome = it.nome?.substring(0, 5)
                     }
 
-                    Log.i("DR3", "${avaliacoesUsuario}")
                 }
 
                 val rvConsultaAvaliador = view?.findViewById<RecyclerView>(R.id.rvConsultaAvaliador)
@@ -73,9 +73,11 @@ class ConsultaFragment : Fragment(), RecyclerViewItemListener {
 
 
     override fun recyclerViewItemClicked(view: View, id: String) {
-
+        avaliacaoDao.alterar(id).addOnSuccessListener {
+            Toast.makeText(activity, "Criado alerta", Toast.LENGTH_LONG).show()
+        }
+        atualizar()
     }
-
 
 
     override fun recyclerViewItemLongClicked(view: View, id: String) {

@@ -32,10 +32,10 @@ class Criptografador {
     }
 
     //
-    fun descriptografar(cripto: String): String?{
-        var decifra : String? = null
+    fun descriptografar(cripto: String): String? {
+        var decifra: String? = null
 
-        if(cripto.isNotEmpty()){
+        if (cripto.isNotEmpty()) {
             var chave = getSecretKey()
             if (chave != null) {
                 Cipher.getInstance("AES/CBC/PKCS7Padding").run {
